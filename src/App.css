@@ -1,38 +1,305 @@
-.App {
+#left-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 280px;
+  background-color: #313644;
+  overflow-y: auto;
+  height: 100vh;
+  border-right: 1px solid #e6ecf5;
+  margin-top: 60px;
+  -webkit-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  overflow-x: hidden;
+  z-index: 2;
+}
+
+#left-menu.small-left-menu,
+#logo.small-left-menu {
+  width: 60px;
+}
+
+#left-menu ul {
+  padding: 0;
+  margin: 0;
+}
+
+#left-menu ul li {
+  padding: 0 10px;
+  display: block;
+  position: relative;
+}
+
+#left-menu > ul > li {
+  margin: 15px 0;
+}
+
+#left-menu ul li a {
+  color: #99abb4;
+  width: 100%;
+  display: inline-block;
+  width: 260px;
+  height: 37px;
+  position: relative;
+}
+
+
+#left-menu ul li a i {
+  font-size: 22px;
   text-align: center;
+  width: 35px;
+  height: 35px;
+  display: inline-block;
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+#left-menu ul li:hover a span{
+  color: #0e9aee;
+}
+#left-menu ul li:hover a i{
+  color: #0e9aee;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+#left-menu ul li a span {
+  width: 100%;
+  height: 35px;
+  padding-left: 10px;
+  color: #99abb4;
+  font-weight: 300;
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+#left-menu ul li.active a {
+  border-bottom: 2px solid #0e9aee;
+}
+
+#left-menu ul li.active a span {
+  color: #fff;
+}
+
+#left-menu ul li.active a i {
+  background-color: #0e9aee;
+  color: #fff;
+}
+
+
+#left-menu li.has-sub ul {
+  background-color: #454e62;
+  margin: 0 -10px;
+  padding-left: 45px;
+  height: 0;
+  overflow: hidden;
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+#left-menu li ul.open {
+/*    height: 140px;*/
+}
+
+#left-menu li.has-sub ul > li {
+  padding-top: 10px;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+#logo {
+  position: fixed;
+  top: 0;
+  z-index: 2;
+  left: 0;
+  background-color: #464e62;
+  border-color: #464e62;
+  height: 60px;
+  width: 280px;
+  font-size: 30px;
+  line-height: 2em;
+  border-right: 1px solid #e6ecf5;
+  z-index: 4;
+  color: #fff;
+  padding-left: 15px;
+  -webkit-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  overflow: hidden;
+}
+
+
+#header {
+  background-color: #fff;
+  height: 60px;
+  border-bottom: 1px solid #e6ecf5;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 3;
+}
+
+#header .header-left {
+  padding-left: 300px;
+  -webkit-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+#header .header-right {
+  padding-right: 40px;
+}
+
+#header .header-right i,
+#header .header-left i {
+  font-size: 30px;
+  line-height: 2em;
+  padding: 0 5px;
+  cursor: pointer;
+}
+
+#main-content {
+  min-height: calc(100vh - 60px);
+  clear: both;
+}
+
+#page-container {
+  padding-left: 300px;
+  padding-top: 80px;
+  padding-right: 25px;
+  -webkit-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+#page-container.small-left-menu,
+#header .header-left.small-left-menu {
+  padding-left: 80px;
+}
+
+.card {
+  border: 1px solid #e6ecf5;
+  margin-bottom: 1em;
+  font-weight: 300;
+}
+
+.card .title {
+  padding: 15px 20px;
+  border-bottom: 1px solid #e6ecf5;
+  margin-bottom: 10px;
+  color: #000;
+  font-size: 18px;
+}
+
+#show-lable {
+  opacity: 0;
+  visibility: hidden;
+  left: 80px;
+  font-weight: 300;
+  padding: 6px 15px;
+  background-color: #0e9aee;
+  position: fixed;
+  color: #fff;
+  -webkit-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+#left-menu.small-left-menu li.has-sub::after{
+  content: '';
+}
+#left-menu.small-left-menu li.has-sub ul{
+  position: fixed;
+  width: 280px;
+  z-index: 123;
+  height: 0;
+  left: 69px;
+  padding-left: 15px;
+}
+
+@media only screen and (max-width: 992px) {
+  #left-menu,
+  #logo {
+      width: 60px;
   }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  
+  #page-container,
+  #header .header-left {
+      padding-left: 80px;
   }
-  to {
-    transform: rotate(360deg);
+  
+  #toggle-left-menu,.big-logo{
+      display: none;
   }
+/*
+  #logo{
+      padding: 0;
+      padding-left: 3px;
+  }
+  .small-logo{
+      display: block;
+  }
+*/
+  
+}
+
+@media only screen and (min-width: 992px) {
+  #left-menu li.has-sub::after {
+      font-family: "Ionicons";
+      content: "\f3d3";
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      cursor: pointer;
+      transform: rotate(0deg);
+      -webkit-transition: all 0.3s ease;
+      -o-transition: all 0.3s ease;
+      transition: all 0.3s ease;
+  }
+  #left-menu li.has-sub.rotate:after {
+      -webkit-transform: rotate(90deg);
+      -ms-transform: rotate(90deg);
+      -o-transform: rotate(90deg);
+      transform: rotate(90deg);
+  }
+  .small-logo{
+      display: none;
+  }
+  
+}    
+
+tbody, td, tfoot, th, thead, tr{
+  padding: 15px 10px;
+}
+
+#pr_id_2_header{
+  padding: 20px 20px;
+}
+.p-dropdown-label{
+  padding: 9px;
+}
+
+.p-dialog-title{
+  padding: 20px 20px;
+}
+
+#pr_id_276_header{
+  padding: 20px 20px;
+}
+.custom-margin-class {
+  margin-top: 500px !important; /* Áp dụng margin mới tạo */
+}
+
+.p-toast-message{
+  margin-top: 50px;
+  z-index: 999;
+}
+.p-toast-message-text{
+  padding: 20px 10px;
+}
+.p-toast-message-content svg{
+  margin-top: 20px;
 }
