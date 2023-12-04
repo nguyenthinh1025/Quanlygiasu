@@ -128,11 +128,11 @@ export default function Login() {
                           </div>
                         </div>
                       </form>
-                      <div className="login-divider">
+                      {/* <div className="login-divider">
                         <span className="fs-6 bg-white z-index-1 p-2 mb-0 text-muted font-weight-600">
                           Or Login With
                         </span>
-                      </div>
+                      </div> */}
                       <div className="row mb-1-9">
                         <div className="col-lg-4 mb-3 mb-lg-0">
                           <div className="form-social-item">
